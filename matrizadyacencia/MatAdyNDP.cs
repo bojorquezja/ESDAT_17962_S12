@@ -25,5 +25,21 @@ namespace matrizadyacencia {
             matady[origen, destino] = peso;
             matady[destino, origen] = peso;
         }
+
+        public void DFS(int origen) {
+            bool[] visitados = new bool[Nodos];
+            DFSUtil(origen, visitados);
+        }
+        private void DFSUtil(int origen, bool[] visitados) {
+            visitados[origen] = true;
+            Console.Write(origen + ",");
+            for (int c = 0; c < matady.GetLength(1); c++) {
+                if (matady[origen, c] > 0) {
+                    if (!visitados[origen]) {
+                        DFSUtil(c, visitados);
+                    }
+                }
+            }
+        }
     }
 }
