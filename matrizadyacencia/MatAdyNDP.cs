@@ -66,5 +66,34 @@ namespace matrizadyacencia {
             }
 
         }
+
+        public int DFSContarNodos(int origen) {
+            bool[] visitados = new bool[Nodos];
+            int cont = 0;
+            DFSContarNodos(origen, visitados);
+            foreach (bool x in visitados) {
+                if (x) {
+                    cont++;
+                }
+            }
+            return cont;
+        }
+        private int DFSContarNodos(int origen, bool[] visitados
+            ) {
+            visitados[origen] = true;
+
+            Console.Write(origen + ",");
+            for (int c = 0; c < matady.GetLength(1); c++) {
+                
+                    if (!visitados[c]) {
+                    
+                    if (matady[origen,c]>0 )
+                            DFSContarNodos(c, visitados);
+                        
+                    }
+                
+            }
+            return acum;
+        }
     }
 }

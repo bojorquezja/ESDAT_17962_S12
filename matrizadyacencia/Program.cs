@@ -25,8 +25,11 @@ while (resp.Length == 3) {
 }
 */
 Console.WriteLine("ingrese peso maximo");
-int peso = Convert.ToInt32(Console.ReadLine());
+//int peso = Convert.ToInt32(Console.ReadLine());
 mat.Mostrar();
 mat.DFS(0);
 Console.WriteLine();
-mat.DFSPesoMax(0, peso);
+//mat.DFSPesoMax(0, peso);
+Console.WriteLine();
+
+Console.WriteLine($"numeros de nodos: {mat.DFSContarNodos(0)}");
