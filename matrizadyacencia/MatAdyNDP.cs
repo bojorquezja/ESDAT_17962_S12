@@ -35,7 +35,7 @@ namespace matrizadyacencia {
             Console.Write(origen + ",");
             for (int c = 0; c < matady.GetLength(1); c++) {
                 if (matady[origen, c] > 0) {
-                    if (!visitados[origen]) {
+                    if (!visitados[c]) {
                         DFSUtil(c, visitados);
                     }
                 }
